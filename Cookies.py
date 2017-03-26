@@ -6,7 +6,7 @@ cookies_wanted = int(input("How many would you like? ")) #Ask user how many cook
 
 while cookies_available > 0:
     if cookies_wanted > cookies_available:
-        print("We don't have that many cookies")
+        print("Sorry, we only have", cookies_available, "cookies available")
         break
 
     elif cookies_wanted == cookies_available:
@@ -18,13 +18,14 @@ while cookies_available > 0:
 
 
 
-"""""
+"""
 ######################################
 ########### Psuedo Code ##############
 ######################################
 While there are more than 0 cookies in the jar, keep eating cookies.
 
-If there are still cookies in the jar tell the user how many cookies there are then ask them if they want to continue eating. If yes, how many would they like to eat?
+If there are still cookies in the jar tell the user how many cookies there are then ask them if they 
+want to continue eating. If yes, how many would they like to eat?
 
 1) generate random number between 1 and 100
 2) Tell user how many cookies there are
@@ -36,4 +37,4 @@ If there are still cookies in the jar tell the user how many cookies there are t
 	c) if number is = cookies avaible, tell user they ate all the cookies.
 	d) if number is > cookies available, tell user we don't have that many cookies
 This is a comment block
-"""""
+"""

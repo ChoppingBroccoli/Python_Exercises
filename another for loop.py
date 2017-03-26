@@ -1,4 +1,4 @@
-#Receive input from the user
+# Receive input from the user
 user_input = input("Enter a number:")
 
 #Convert the user input from a str to a int
