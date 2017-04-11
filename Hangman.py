@@ -1,15 +1,6 @@
 import random
 words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
-
-
-def pick_a_word():
-    return random.choice(words)
-
-print(pick_a_word())
-
-
-def get_guess(word):
-    return 'a'
+lives_remaining = 14
 
 
 def play():
@@ -25,8 +16,24 @@ def play():
             break
 
 
+def pick_a_word():
+    return random.choice(words)
+
+
+def get_guess(word):
+    print_word_with_blanks(word)
+    print('Live remaining: ' + str(lives_remaining))
+    guess = input(' Guess a letter or whole word?')
+    return guess
+
+
+def print_word_with_blanks(word):
+    print('print_word_with_blanks:not done yet')
+
+
 def process_guess(guess, word):
     global lives_remaining
     lives_remaining = lives_remaining - 1
     return False
 
+play()
