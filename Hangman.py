@@ -1,5 +1,3 @@
-#Stopped pg.52
-#Start with completing process_guess function
 '''
 Completed code but it's broken. As soon as the first letter in the word is guessed the games
 ends as a Win. 
@@ -14,11 +12,11 @@ guessed_letters = ''  # initialize the number of letters guessed
 
 def play():  # this function controls the game
     word = pick_a_word()  # grab a word from the words variable
-    print(word)
+    print(word) # prints the word that was randomly chosen  by the pick_a_word function (for debugging purposes)
     while True:
         guess = get_guess(word)  # function that gets a guess from the user
         if process_guess(guess, word):  #if guess is the same as what the random module pulled from the words variable then they win
-            print('You Win! Jolly good. You gessed,', word)
+            print('You Win! Jolly good. You guessed,', word)
             break  # end game
         if lives_remaining == 0:  # if there are no lives left then you die
             print('You are Hanged')
@@ -31,9 +29,9 @@ def pick_a_word():  # uses the random module to randomly pick a word from the wo
 
 
 def get_guess(word):  # get guess from user
-    print_word_with_blanks(word)
-    print('Live remaining: ' + str(lives_remaining))
-    guess = input(' Guess a letter or whole word?')
+    print_word_with_blanks(word) # Moved to end of function for testing but it made things worse. App did not register first letter guess.
+    print('Lives remaining: ' + str(lives_remaining))
+    guess = input('Guess a letter or whole word?')
     return guess
 
 
@@ -67,6 +65,7 @@ def single_letter_guess(guess, word):  # determines if a single letter has been 
     guessed_letters = guessed_letters + guess
     if all_letters_guessed(word):
         return True
+    return False
 
 
 def all_letters_guessed(word):  # determines if all of the letters in the word have been guessed
