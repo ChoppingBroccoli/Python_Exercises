@@ -10,7 +10,7 @@
 
 import random
 blanks = ''
-lives = 0
+lives = 14
 
 # list of words to work with
 words_list = ['chicken', 'horse', 'cat', 'mouse', 'dog', 'goat']
