@@ -20,18 +20,14 @@ chosen_word = random.choice(words_list)
 print('Randomly chosen word:', chosen_word)
 
 
-guessed_letter = input('Guess a letter')
-while lives < 14:
-    for each_letter in chosen_word: #not right. prints all print statements for each letter in the chosen word
-        if guessed_letter == each_letter:
+guessed_letter = input('Guess a letter: ')  # prompt user to enter a letter
+while lives <= 14 and lives > 0:  # continue while there are lives remaining
+    for each_letter in chosen_word:  # for each letter (each_letter) in chosen_word run the if statement below
+        if guessed_letter == each_letter:  # if the letter the user entered is in chosen_word then print something
             print('You got one right. ', guessed_letter, "is in the word")
-            continue
-        elif lives < 14:
-            print('Guess again')
-        else:
+        else:  # if the letter the user entered is NOT in chosen_word then decrement lives by 1 and try again
             print('Sorry, ', guessed_letter, 'is not in the word')
             lives = lives - 1
-    break
-        #blanks = blanks + '_ '
-
-#print(blanks)
+            print('You have', lives, 'lives remaining.')
+			#continue
+    #break
